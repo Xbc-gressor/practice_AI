@@ -1,5 +1,5 @@
 from PyQt5 import QtWidgets, QtCore, QtGui
-from PyQt5.QtWidgets import QPushButton, QDialog, QLabel
+from PyQt5.QtWidgets import QPushButton, QDialog, QLabel, QApplication
 import sys
 
 # 创建对象
@@ -7,7 +7,7 @@ import sys
     PyQt5是包路径
     QtWidget 是模块，不是python模块，但是是C写的扩展名是pyd的dll模块
 """
-app = QtWidgets.QApplication([]) # 传递命令行参数
+app = QApplication([]) # 传递命令行参数
 
 # ---------------
 # 创建窗体，处理事件

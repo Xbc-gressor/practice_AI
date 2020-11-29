@@ -1,0 +1,111 @@
+1. 图像的表示与基本操作
+	01. 准备
+		pip install opencv-python
+		pip install opencv-contrib-python
+		pip install numpy
+		pip install scipy
+	02. 文档
+		百度: opencv doc/ numpy doc
+		opencv: https://docs.opencv.org/4.5.0/
+		numpy : https://numpy.org/doc/1.19/reference/index.html
+	03. opencv：
+		core：图像的基本表示
+		imgproc：图像处理
+		imgcodecs：图像解码：图像IO
+		videoio：摄像头与视频的IO
+	04. 图像的加载与保存
+		retval	=	cv.imread(	filename[, flags]	)
+		返回类型：numpy.ndarray
+
+	05. 图像格式
+		numpy.ndarray
+			|- 数组
+			|- 彩色图像是3维数组：(720, 1280, 3) == (height，width，channel/depth)
+				|- 深度在opencv：通道 + 通道的基本类型 
+					0xFF 00 00 : BGR 而在Qt中使用 RGB888
+	06. numpy.ndarray
+		构造ndarray就是构造一个图像
+
+	07. 使用python的数据来构造ndarray
+	补充：解析表达式：
+		arr = [255 for x in range(5)]
+
+	08. 图像的基本操作
+		下标运算：[]  ： 右：取值， 左：赋值
+			1. 整数，整数数组
+			2. 切片
+				|- 对象表示
+					slice(begin, end, step) : [begin, end)
+					slice(end) : begin = 0 ,step = 0
+				|- 表达式表示
+					begin:end:step
+					begin:end
+					end:
+			3. 逻辑矩阵
+
+2. *使用模板
+	|- UI的设计
+		01. 使用qtdesigner设计ui
+			工具一：C++ Qt: QtCreator：desginer
+			工具二：pip install pyqt5-tools   : 只支持Windows
+					
+					- qt5_applications/Qt/bin/designer.exe
+					
+					- ${PYTHON_HOME}\Scripts\pyqt5designer.exe
+
+					|- designer.exe
+					|- pyqt5designer.exe
+			A. 拖拽组件
+			B. 设置组件属性：位置大小，标签，一起其他，
+			C. 设置组件的名字： Video / lbl_video
+			D. *设置槽函数
+			E. *设计信号与槽
+
+		02. 把ui翻译成python
+			工具：pyuic5 -o 输出的文件(py文件)   被翻译的ui文件
+		03. import python模块
+		04. 创建ui对象
+		05. 使用ui对象
+				self.ui.setupUi(self)
+
+3. 摄像头多任务实现
+	01. 继承QThread
+	02. override run函数
+	03. 创建摄像头对象
+	04. run实现摄像头的视频采集
+	05. 启动线程
+
+4. 摄像头数据抓取
+	self.dev = cv2.VideoCapture(0, cv2.CAP_DSHOW) 
+	status, frame = self.dev.read()
+
+5. 使用信号传递图像
+	01. 定义信号
+	02. 发送信号
+	03. 定义槽函数
+	04. 绑定信号与槽
+
+6. 在Qt中显示图像
+7. 图像的处理
+
+
+
+
+总的目标：
+	技能： 视频采集的程序；
+	技术：
+		01. 图像的表示与基本操作
+		02. *信号signal与槽slot (传递数据：图像) 
+		03. *多线程实现多任务
+		04. 视频的处理（摄像头图像抓取，图像信号发送，图像显示）
+		05. 图像的处理
+	编程经验：
+		分层结构的体现（技术结构/物理架构）
+
+
+作业：
+	1. 完成视频采集
+		|- 利用图像的格式理解，实现简单的图像处理
+
+
+
