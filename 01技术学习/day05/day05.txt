@@ -1,0 +1,100 @@
+环境：
+	pip install PyQt5
+
+1. Qt应用的项目模板
+	01. 项目工程目录结构
+		构建工作目录
+		建议个root包路径
+			|- 包路径强烈建议放一个__init__.py文件
+		C:.
+			│   run_app.bat
+			│
+			└───bigapp
+			    │   main.py
+			    │
+			    ├───ais
+			    └───uis
+	02. 项目工程的模块结构
+		01. QDailog窗体模块
+		02. QApplication应用模块
+		03. main.py主模块
+		04. 用户调用脚本
+		C:.
+			│   run_app.bat
+			│
+			└───bigapp
+			    │   main.py
+			    │
+			    ├───ais
+			    └───uis
+			            bapp.py
+			            bdialog.py	
+	03. 实现窗体
+		继承QDialog
+			|- 构造器
+
+	04. 实现应用
+		继承QApplication
+			|- 构造器
+			|- 构造窗体 
+	05. 应用的调用
+			|- 创建QApplication
+			|- 开始消息主循环
+
+	06. 启动脚本
+			python -m 主模块
+
+2. Qt中的事件PaintEvent/键盘事件
+	override
+
+3. Qt中的图像绘制
+	QPainter
+		|- 几何图形
+		|- 图像
+		|- 文本
+
+4. 多线程/面向对象
+	封装大嘴鱼 （多线程）
+		数据->函数
+
+	override代码函数run
+		start	
+
+5. 信号与槽signal/slot
+	BFish - BDialog 通信
+		01. 定义信号
+		02. 发送信号
+		03. 实现槽函数（QDialog.repaint）
+		04. 绑定信号与槽函数
+	补充：
+		绘制颜色
+
+5. 图像的表示
+	opencv: pip install opencv-python
+	opencv辅助模块安装:pip install opencv-contrib-python
+	pyqt5-tools
+
+	numpy : pip install numpy
+	scipy: pip install scipy
+
+	文档：
+		opencv：https://docs.opencv.org/4.5.0/
+		numpy：https://numpy.org/doc/
+	- 图像就是一个数组：<class 'numpy.ndarray'>
+
+目标：
+	1. 技能： 
+		完成独立的程序：大嘴鱼
+	2. 技术：
+		01. 多线程的技术
+		02. 面向对象的设计
+		03. 模块间的通信：信号与槽
+		04. Qt中简单的图形绘制
+
+作业1：
+	独立完成大嘴鱼。
+		完成创新：
+			随机的自动游动
+			添加眼，尾巴
+			随机颜色 
+			🐟碰到窗体边界，自动随机改向

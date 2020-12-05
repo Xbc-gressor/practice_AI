@@ -9,4 +9,4 @@ class numpy.ndarray(shape, dtype=float, buffer=None, offset=0, strides=None, ord
 # 构建数组 （图像 = 通道数：1，3，4）
 img = numpy.ndarray(shape=(500, 500, 3), dtype=numpy.uint8)
 img.fill(128)
-cv2.imwrite("dd.png", img)
+cv2.imwrite("d2.png", img)

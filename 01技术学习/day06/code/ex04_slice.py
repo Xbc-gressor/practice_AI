@@ -17,7 +17,8 @@ img = cv2.imread("00016.png")
 
 # print(img > 100)
 
-img [img[:,: 0] > 100] = 0 
+print(img[:,:,0:1]>100)
+img [img[:,:,:] > 100] = 0 
 
-cv2.imwrite("dd.png", img)
+cv2.imwrite("d4.png", img)
 
